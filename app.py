@@ -1,4 +1,9 @@
 import os
+os.environ["STREAMLIT_WATCHER_TYPE"] = "poll"
+
+# OR reduce watching scope
+os.environ["STREAMLIT_SERVER_FILE_WATCHER_TYPE"] = "none"
+
 import numpy as np
 import streamlit as st
 from PIL import Image
@@ -126,3 +131,4 @@ elif app_mode == "Predict Tumor":
     show_prediction_page(feature_model, clf)
 elif app_mode == "Self Assessment":
     show_self_assessment()
+
