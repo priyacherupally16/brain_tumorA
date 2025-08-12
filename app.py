@@ -39,11 +39,9 @@ def show_home():
     st.set_page_config(page_title="Brain Tumor Detector", layout="centered")
 
 # Title and header
-st.title(" Brain Tumor Detection System")
+st.title(" Brain Tumor Detection ")
 st.subheader("Detects Tumor Presence from MRI Scans")
 
-# Add an image
-st.image("mri.jpg", caption="Understanding Brain Tumors", use_column_width=True)
 st.markdown("""
         ## What is a Brain Tumor?
         A brain tumor is an abnormal growth of cells in the brain. It can be **malignant (cancerous)** or **benign (non-cancerous)**. Tumors affect brain function and can cause serious complications if untreated.
@@ -67,7 +65,7 @@ st.markdown("""
 
 # Show prediction page
 def show_prediction_page(feature_model, clf):
-    st.title("🔍 Class-wise Brain Tumor Detection")
+    st.title("🔍 Class-wise Brain Tumor detection")
 
     uploaded_file = st.file_uploader("Upload an MRI image", type=["jpg", "jpeg", "png"])
 
@@ -131,4 +129,5 @@ elif app_mode == "Predict Tumor":
     show_prediction_page(feature_model, clf)
 elif app_mode == "Self Assessment":
     show_self_assessment()
+
 
