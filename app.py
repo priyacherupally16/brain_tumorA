@@ -117,7 +117,9 @@ def show_self_assessment():
             st.success("✅ Low Risk. You seem to be okay, but stay aware of symptoms.")
 # Load models
 feature_model = load_feature_extractor()
-clf = load_classifier()
+clf = load_classifier():
+     with open("rf_model.pkl", "rb") as f:
+        return pickle.load(f)
 
 # Navigation
 st.sidebar.title("Navigation")
@@ -129,5 +131,6 @@ elif app_mode == "Predict Tumor":
     show_prediction_page(feature_model, clf)
 elif app_mode == "Self Assessment":
     show_self_assessment()
+
 
 
